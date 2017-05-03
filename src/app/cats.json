@@ -1,0 +1,10 @@
+{
+	"data": [
+		{ "username": "login", "password": "password", "id": 0, "name": "Котострофа", "isOnline": true, "birthDate": "2014-10-20", "photoUrl": "./images/cat.jpg", "interests": ["есть", "спать", "мур-мур-мур"] },
+		{ "id": 1, "name": "Мурзик", "isOnline": false, "birthDate": "2015-03-21", "photoUrl": "", "interests": [] },
+		{ "id": 2, "name": "Матроскин", "isOnline": true, "birthDate": "", "photoUrl": "./images/Matroskin.jpg", "interests": ["нет интересов"] },
+		{ "id": 4, "name": "Новый котик", "isOnline": true, "birthDate": "", "photoUrl": "", "interests": [] },
+		{ "id": 8, "name": "Шуруп", "isOnline": false, "birthDate": "2016-11-12", "photoUrl": "./images/blackcat.jpg", "interests": ["рыба"] }
+	],
+  "token": "token"
+}

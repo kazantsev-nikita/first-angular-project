@@ -1,0 +1,29 @@
+<div class="container">
+  <div *ngIf="cat">
+    <div class="col-md-3">
+      <div class="profile-image img"  
+        [ngStyle]="{ 'background-image': (cat.photoUrl.length > 0 ) ? 'url(' + cat.photoUrl + ')' : 'url(./images/nophoto.jpg)'}">
+      </div>		
+    </div>
+    <div class="col-md-6">
+      <h1 id="name">
+        {{ cat.name }}
+      </h1>
+      <label for="birthDate">Birth date</label>
+      <div id="birthDate">
+        {{ cat.birthDate }}
+      </div>
+      <label for="interests">Interests</label>
+      <div id="interests">
+        <ul>
+          <li *ngFor="let interest of cat.interests">
+            {{ interest }}
+          </li>
+        </ul>
+      </div>		
+    </div>	
+    <div class="col-md-3">
+      <friends-list></friends-list>      
+    </div>
+  </div> 
+</div>

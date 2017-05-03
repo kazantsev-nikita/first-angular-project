@@ -1,0 +1,13 @@
+<label class="link" for="friends" (click)="goToTable();">Friends</label>
+<div *ngIf="friends" id="friends">
+  <div class="row" *ngFor="let friend of friends" (click)="showUser(friend); gotoDetail();">
+    <div class="col-xs-3">
+      <div class="profile-image-small img"  
+        [ngStyle]="{ 'background-image': (friend.photoUrl.length > 0 ) ? 'url(' + friend.photoUrl + ')' : 'url(./images/nophoto.jpg)'}">
+      </div>
+      <div [ngClass]="{'true': 'green-circle', 'false': 'red-circle'}[friend.isOnline]">
+      </div>
+    </div>
+    <div id="friendName" class="col-xs-9">{{ friend.name }}</div>				
+  </div>
+</div>

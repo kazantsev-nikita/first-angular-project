@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="table-responsive">
+    <div class="form-group">
+      <input class="form-control" id="search-box" [(ngModel)]="model.value" (keyup)="search()" />
+      <div>
+        <h4>Search</h4>
+      </div>      
+    </div>    
+		<table id="table" class="table table-sortable table-striped table-bordered" cellspacing="0" width="100%">
+			<thead>
+				<tr>
+					<th></th>
+					<th name="Name" (click)="changeSorting('Name')">
+            Name
+            <i class="fa fa-fw fa-sort"></i>						            					
+					</th>
+					<th name="Birthdate" (click)="changeSorting('Birthdate')">
+						Birthdate
+            <i class="fa fa-fw fa-sort"></i>
+					</th>
+					<th>Interests</th>
+					<th name="IsOnline" (click)="changeSorting('IsOnline')">
+            Is online?
+            <i class="fa fa-fw fa-sort"></i>
+					</th>
+				</tr>
+			</thead>      
+        <tbody>	
+          <tr *ngFor="let cat of cats">
+            <td>
+              <div class="profile-image-medium img"  
+                [ngStyle]="{ 'background-image': (cat.photoUrl.length > 0 ) ? 'url(' + cat.photoUrl + ')' : 'url(./images/nophoto.jpg)'}">
+              </div>
+            </td>
+            <td style="cursor: pointer;" (click)="showUser(cat); gotoDetail();">{{ cat.name }}</td>
+            <td>{{ cat.birthDate }}</td>
+            <td>{{ cat.interests }}</td>
+            <td>{{ cat.isOnline == true? 'True' : 'False' }}</td>
+          </tr>          
+        </tbody>
+		</table>
+	</div>
+</div>
